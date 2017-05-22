@@ -1,4 +1,4 @@
-# Employee Mmanagement Demo Angular2
+# Employee Management Demo Angular2
 This is just some demo code that uses Angular2 and some mock data to create a simple application for editing and removing data.
 
 ### Project Install
