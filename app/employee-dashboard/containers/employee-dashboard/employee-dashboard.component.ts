@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+
+import { EmployeeDashboardService } from '../../employee-dashboard.service';
+
 import { Employee } from '../../models/employee.interface';
 
 @Component({
@@ -24,38 +27,12 @@ export class EmployeeDashboardComponent implements OnInit {
 
   employees: Employee[];
 
-  constructor(){}
+  constructor(private employeeService: EmployeeDashboardService){}
 
   ngOnInit() {
-    this.employees  = [{
-    id:1,
-    fullname: 'deian radev',
-    checkedIn: true,
-    startDate: null,
-    skills: [{name:'marketing', yearsExperience: 4}]
-  },
-  {
-    id:2,
-    fullname: 'mary price',
-    checkedIn: false,
-    startDate: 1269302400,
-    skills: [{name:'coding', yearsExperience: 19}]
-  },
-  {
-    id:3,
-    fullname: 'brian smith',
-    checkedIn: true,
-    startDate: 1418299200,
-    skills: [{name:'sales', yearsExperience:8}, {name:'public speaking', yearsExperience:2}]
-  },
-  {
-    id:4,
-    fullname: 'stacy green',
-    checkedIn: false,
-    startDate: null,
-    skills: null
-  }]
-}
+    this.employees = this.employeeService.getEmployees();
+  }
+  
   handleRemove(event: Employee){
     this.employees = this.employees.filter((employee: Employee)=> {
       return employee.id !== event.id;

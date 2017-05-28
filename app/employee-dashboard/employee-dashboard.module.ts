@@ -8,6 +8,8 @@ import { EmployeeDashboardComponent } from './containers/employee-dashboard/empl
 import { EmployeeCountComponent } from './components/employee-count/employee-count.component';
 import { EmployeeDetailComponent } from './components/employee-detail/employee-detail.component';
 
+//services
+import { EmployeeDashboardService } from './employee-dashboard.service';
 @NgModule({
     declarations: [
         EmployeeDashboardComponent,
@@ -19,6 +21,9 @@ import { EmployeeDetailComponent } from './components/employee-detail/employee-d
     ],
     exports: [
         EmployeeDashboardComponent
+    ],
+    providers: [
+        EmployeeDashboardService
     ]
 })
 export class EmployeeDashboardModule {}
