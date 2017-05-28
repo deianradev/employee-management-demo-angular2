@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpModule } from '@angular/http';
 
 //containers
 import { EmployeeDashboardComponent } from './containers/employee-dashboard/employee-dashboard.component'
@@ -10,11 +11,13 @@ import { EmployeeDetailComponent } from './components/employee-detail/employee-d
 
 //services
 import { EmployeeDashboardService } from './employee-dashboard.service';
+
 @NgModule({
     declarations: [
         EmployeeDashboardComponent,
         EmployeeCountComponent,
-        EmployeeDetailComponent
+        EmployeeDetailComponent,
+        HttpModule
     ],
     imports: [
         CommonModule

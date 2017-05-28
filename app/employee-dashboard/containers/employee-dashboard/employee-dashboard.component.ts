@@ -24,7 +24,6 @@ import { Employee } from '../../models/employee.interface';
 })
 export class EmployeeDashboardComponent implements OnInit {
 
-
   employees: Employee[];
 
   constructor(private employeeService: EmployeeDashboardService){}

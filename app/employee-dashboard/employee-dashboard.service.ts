@@ -1,7 +1,10 @@
+import { Injectable } from '@angular/core';
 import { Employee } from './models/employee.interface';
+import { Http } from '@angular/http';
 
+@Injectable()
 export class EmployeeDashboardService {
-    constructor(){}
+    constructor(private http: Http){}
 
     getEmployees(): Employee[]{
         return [{
