@@ -1,34 +1,9 @@
-<a href="https://ultimateangular.com" target="_blank"><img src="https://toddmotto.com/img/ua.png"></a>
-
-# Angular Fundamentals Seed
-
-> This is the seed project for the [Angular Fundamentals](https://ultimateangular.com/courses/#angular-2) course by [Todd Motto](https://twitter.com/toddmotto).
-
-## Project Setup and Tooling
-
-### Tools
-
-This course is recorded with the following tools, you can optionally follow along using the same, or your favourite text editor/IDE and browser.
-
-*Text editor*: Visual Studio Code, you can [download it here](http://code.visualstudio.com) for both Mac, Windows and Linux.
-*Browser*: Google Chrome, you can [download it here](https://www.google.com/chrome)
-
-### Prerequisites
-
-Please make sure that you have the following installed:
-
-* Install the _latest version_ of [Node.js](http://nodejs.org) (Mac or Windows)
-  * Mac users can optionally `brew install node` if they have [brew](http://brew.sh) installed
-
-* Node Sass, you _may_ need it if you haven't already got it installed:
-
-```bash
-npm install -g node-sass
-```
+# Employee Management Demo Angular2
+This is just some demo code that uses Angular2 and some mock data to create a simple application for editing and removing data.
 
 ### Project Install
 
-To grab the seed project, either Fork this repo or [click here to download](https://github.com/UltimateAngular/angular-fundamentals-seed/archive/master.zip) the `.zip` folder and extract the files wherever you like on your machine.
+Fork this repo, download and extract the files wherever you like on your machine.
 
 #### Step 1: Package Manager
 
@@ -80,4 +55,4 @@ The project uses `webpack` to build and compile all of our assets. This will do 
 - Allow us to use SASS for our component's CSS files
 - Provide the polyfills needed to run our app in all modern browsers
 - Mock a JSON backend using [json-server](https://github.com/typicode/json-server)
-# employee-management-demo-angular2
+
