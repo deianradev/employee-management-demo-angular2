@@ -32,7 +32,7 @@ export class EmployeeDashboardComponent implements OnInit {
   ngOnInit() {
     this.employees = this.employeeService.getEmployees();
   }
-  
+
   handleRemove(event: Employee){
     this.employees = this.employees.filter((employee: Employee)=> {
       return employee.id !== event.id;
@@ -44,13 +44,6 @@ export class EmployeeDashboardComponent implements OnInit {
         employee = Object.assign({}, employee, event)
       }
       return employee;
-    })
-    
+    }) 
   }
-
-      ngOnChanges(changes){
-        if(changes.detail){
-            this.detail = Object.assign({}, changes.detail.currentValue)
-        }
-    }
 }

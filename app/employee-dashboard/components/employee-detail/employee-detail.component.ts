@@ -8,7 +8,7 @@ import { Employee } from '../../models/employee.interface';
     <div>
         <span class="status" [ngClass]="{'checked-in': detail.checkedIn}"></span>
           <div *ngIf="editing">
-            <input type="test" 
+            <input type="text" 
             [value]="detail.fullname"
             (input)="onNameChange(name.value)"
             #name>
