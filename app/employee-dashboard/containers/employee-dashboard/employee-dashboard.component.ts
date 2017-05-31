@@ -29,20 +29,31 @@ export class EmployeeDashboardComponent implements OnInit {
   constructor(private employeeService: EmployeeDashboardService){}
 
   ngOnInit() {
-    this.employees = this.employeeService.getEmployees();
+    this.employeeService.getEmployees()
+    .subscribe((data: Employee[]) => {
+      this.employees = data;
+    });
   }
 
   handleRemove(event: Employee){
+    this.employeeService
+    .removeEmployee(event)
+    .subscribe((data: Employee)=> {
     this.employees = this.employees.filter((employee: Employee)=> {
       return employee.id !== event.id;
     })
+    })
   }
   handleEdit(event: Employee){
+    this.employeeService
+    .updateEmployee(event)
+    .subscribe((data: Employee)=>{
     this.employees = this.employees.map((employee: Employee)=>{
       if(employee.id === event.id){
         employee = Object.assign({}, employee, event)
       }
       return employee;
     }) 
+    })
   }
 }

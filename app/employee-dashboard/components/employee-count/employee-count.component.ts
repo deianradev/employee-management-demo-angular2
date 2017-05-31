@@ -7,7 +7,7 @@ import { Employee } from '../../models/employee.interface';
     <div>
         <h3>Employees</h3>
         <div>
-            Total Active Employees {{ activeEmployees() }} / {{ items.length }}
+            Total Active Employees {{ activeEmployees() }} / {{ items?.length }}
         </div>
     </div>
     `

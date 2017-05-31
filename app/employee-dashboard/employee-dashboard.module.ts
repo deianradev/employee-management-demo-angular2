@@ -16,11 +16,11 @@ import { EmployeeDashboardService } from './employee-dashboard.service';
     declarations: [
         EmployeeDashboardComponent,
         EmployeeCountComponent,
-        EmployeeDetailComponent,
-        HttpModule
+        EmployeeDetailComponent
     ],
     imports: [
-        CommonModule
+        CommonModule,
+        HttpModule
     ],
     exports: [
         EmployeeDashboardComponent

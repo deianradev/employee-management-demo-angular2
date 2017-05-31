@@ -1,39 +1,41 @@
 import { Injectable } from '@angular/core';
 import { Employee } from './models/employee.interface';
-import { Http } from '@angular/http';
+import { Http, Response } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/observable/throw';
+
+const EMPLOYEE_API: string = '/api/employees';
 
 @Injectable()
 export class EmployeeDashboardService {
     constructor(private http: Http){}
 
-    getEmployees(): Employee[]{
-        return [{
-            id:1,
-            fullname: 'deian radev',
-            checkedIn: true,
-            startDate: null,
-            skills: [{name:'marketing', yearsExperience: 4}]
-        },
-        {
-            id:2,
-            fullname: 'mary price',
-            checkedIn: false,
-            startDate: 1269302400,
-            skills: [{name:'coding', yearsExperience: 19}]
-        },
-        {
-            id:3,
-            fullname: 'brian smith',
-            checkedIn: true,
-            startDate: 1418299200,
-            skills: [{name:'sales', yearsExperience:8}, {name:'public speaking', yearsExperience:2}]
-        },
-        {
-            id:4,
-            fullname: 'stacy green',
-            checkedIn: false,
-            startDate: null,
-            skills: null
-        }]
+    getEmployees(): Observable<Employee[]>{
+        return this.http
+            .get(EMPLOYEE_API)
+            .map((response: Response) => {
+                return response.json();
+            })
+            .catch((error: any)=> Observable.throw(error.json()))
     }
+
+    updateEmployee(employee: Employee): Observable<Employee>{
+    return this.http
+        .put(`${EMPLOYEE_API}/${employee.id}`, employee)
+        .map((response: Response) => {
+            return response.json();
+        })
+        .catch((error: any)=> Observable.throw(error.json()))
+    }
+
+    removeEmployee(employee: Employee): Observable<Employee>{
+    return this.http
+        .delete(`${EMPLOYEE_API}/${employee.id}`)
+        .map((response: Response) => {
+            return response.json();
+        })
+        .catch((error: any)=> Observable.throw(error.json()))
+    }    
 }
